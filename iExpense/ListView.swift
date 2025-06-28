@@ -1,13 +1,26 @@
+//
+//  ListView.swift
+//  iExpense
+//
+//  Created by DEEPAK BEHERA on 26/06/25.
+//
+import SwiftUI
+import SwiftData
+
 struct ListView: View {
-    @Query var expenseItems: [ExpenseItem]
-    init(minimumCost: Double, sortOrder: [SortDescriptor<ExpenseItem>]) {
-        _expenseItems = Query(filter: #Predicate<ExpenseItem>{ item in
-            item.cost >= minimumCost
-        }, sort: sortOrder)
-    }
+    var items: [ExpenseItem]
+    
     var body: some View {
-        List(expenseItems, id: \.self) { item in
-            Text(item.name)
+        List(items, id: \.self) { item in
+            NavigationLink {
+                EditExpenseView(expenseItem: item)
+            } label: {
+                ExpenseRow(item: item)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(.init())
+            }
         }
+        .listStyle(.plain)
     }
 }
+
