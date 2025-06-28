@@ -1,18 +1,18 @@
 //
-//  OverAllView.swift
+//  EditExpenseView.swift
 //  iExpense
 //
-//  Created by Deepak Kumar Behera on 05/06/25.
+//  Created by DEEPAK BEHERA on 26/06/25.
 //
 
 import SwiftUI
 
-struct OverAllView: View {
+struct EditExpenseView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    OverAllView()
+    EditExpenseView()
 }
