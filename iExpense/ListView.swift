@@ -18,6 +18,8 @@ struct ListView: View {
                 ExpenseRow(item: item)
                     .listRowSeparator(.hidden)
                     .listRowInsets(.init())
+                    .accessibilityLabel("\(item.name) \(item.cost)")
+                    .accessibilityHint(item.type)
             }
         }
         .listStyle(.plain)
